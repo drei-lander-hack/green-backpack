@@ -6,4 +6,6 @@ Visualisierung/Simulation von aktuellen und künftigen CO2 Emissionen (pro Bahn,
 Maßnahmen zur Reduktion + persönlicher Beitrag der Mitarbeitenden den CO2-Fußabdruck zu reduzieren z.B. durch virtuelle
 Besprechung statt Dienstreise oder (klimaneutrales) Essen in der Kantine statt Mittagsessen To-Go in Einweg-Verpackung.
 
-Wir sammeln Ideen aktuell im [Wiki](https://github.com/drei-lander-hack/green-backpack/wiki)
+Wir sammeln Ideen und weitere Informationen (z.B. Datenquellen) aktuell im [Wiki](https://github.com/drei-lander-hack/green-backpack/wiki)
+
+Außerdem gibt es noch das [Projekt-Board](https://github.com/drei-lander-hack/green-backpack/projects/1), mit dem wir den Überblick über unsere Aufgaben behalten.
