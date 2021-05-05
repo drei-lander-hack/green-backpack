@@ -1,6 +1,18 @@
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
-export default defineComponent({})
+import { defineComponent } from 'vue'
+import { useStore, mapState } from 'vuex'
+
+export default defineComponent({
+  setup() {
+    const store = useStore()
+
+    return { store }
+  },
+
+  computed: {
+    ...mapState(["sections"])
+  }
+})
 </script>
 
 <template>
@@ -10,30 +22,42 @@ export default defineComponent({})
     Entscheide, an welchen Stellschrauben Du deinen Rucksack verändern willst:
   </p>
 
-  <ul>
-    <li>Dienstreisen</li>
-    <li>Arbeitsweg</li>
-    <li>Mittagessen</li>
-  </ul>
+  <div class="sections">
+    <div v-for="(section, index) in sections" :key="index">
+      {{ section }}
+    </div>
+  </div>
 
-  <copyright>
+  <div class="copyright">
     Bild von http://pngimg.com/image/6353 unter CC-BY 4.0
-  </copyright>
+  </div>
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 a {
   color: #42b983;
 }
 
-ul {
-  max-width: 320px;
-  margin: 1rem auto;
-  text-align: left;
+.sections {
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  div {
+    border: 1px solid #aaaaaa;
+    padding: .5em 1em;
+    margin: .5em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eeeeee;
+    }
+  }
 }
 
-copyright {
+.copyright {
   position: fixed;
   right: 2px;
   bottom: 2px;
