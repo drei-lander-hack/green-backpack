@@ -41,6 +41,7 @@ a {
 
 .sections {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   max-width: 1024px;
   margin: 0 auto;
@@ -61,6 +62,6 @@ a {
   position: fixed;
   right: 2px;
   bottom: 2px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 </style>
