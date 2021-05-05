@@ -19,6 +19,7 @@ Du brauchst eine IDE (wie z.B. https://code.visualstudio.com/ oder https://www.j
 
 Wenn du Windows benutzt, bietet sich die bash des Windows Subsystems for Linux an. Beim Mac ist mit dem Terminal Programm alles da, was du brauchst.
 
+### Installieren und Starten des Frontends
 Dann mittels des folgenden Kommandos dieses Repository in ein lokales Verzeichnis klonen:
 
 ```
