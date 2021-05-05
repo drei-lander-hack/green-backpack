@@ -23,7 +23,7 @@ export default defineComponent({
   </p>
 
   <div class="sections">
-    <div v-for="(section, index) in sections" :key="index">
+    <div v-for="section in sections" :key="section">
       {{ section }}
     </div>
   </div>
