@@ -26,7 +26,13 @@ Dann mittels des folgenden Kommandos dieses Repository in ein lokales Verzeichni
 git clone https://github.com/drei-lander-hack/green-backpack.git
 ```
 
-Dies legt ein Unterverzeichnis "green-backpack" auf deinem Rechner an, in das du mit `cd green-backpack` wechseln kannst.
+Dies legt ein Unterverzeichnis "green-backpack" auf deinem Rechner an, in das du mit
+
+```
+cd green-backpack
+```
+
+wechseln kannst.
 
 Dort dann die verwendeten Bibliotheken installieren und das Frontend starten:
 
