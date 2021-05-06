@@ -1,18 +1,25 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import GreenBackpack from './components/GreenBackpack.vue'
+import { mapState } from 'vuex'
 
 export default defineComponent({
-  name: 'App',
-  components: {
-    GreenBackpack
+  computed: {
+    ...mapState(["maxMainImg"])
   }
 })
 </script>
 
 <template>
-  <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/backpack.png" />
-  <GreenBackpack />
+  <header :class="{ hero: maxMainImg }">
+    <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/backpack.png" />
+    <h1>Der Grüne Rucksack</h1>
+  </header>
+
+  <router-view />
+
+  <div class="copyright">
+    Bild von http://pngimg.com/image/6353 unter CC-BY 4.0
+  </div>
 </template>
 
 <style lang="scss">
@@ -25,15 +32,50 @@ body {
   overflow: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #1f8959;
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 10px;
 
-  .logo {
-    max-height: 12rem;
+  header {
+    display: flex;
+
+    img {
+      transition: all .5s;
+      margin: 1em 0 0;
+      max-height: 3rem;
+    }
+
+    &.hero {
+      text-align: center;
+      flex-direction: column;
+
+      img {
+        display: inline-block;
+        margin: 5em auto 0;
+        max-height: 12rem;
+      }
+    }
+
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 28px;
+        margin-top: 1.4rem;
+      }
+    }
   }
+}
+
+.copyright {
+  position: fixed;
+  right: 2px;
+  bottom: 2px;
+  font-size: 0.7rem;
 }
 </style>

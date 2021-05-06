@@ -1,30 +1,38 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useStore, mapState } from 'vuex'
+import { mutationTypes } from '../store'
 
-export default defineComponent({
+const component = defineComponent({
   setup() {
     const store = useStore()
 
     return { store }
   },
 
-  computed: {
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      const c = (vm as unknown as typeof component)
+      c.$store.commit(mutationTypes.maximizeMainImage())
+    })
+  },
+
+computed: {
     ...mapState(["sections"])
   }
 })
+
+export default component
 </script>
 
 <template>
-  <h1>Der Grüne Rucksack</h1>
-
   <p>
     Entscheide, an welchen Stellschrauben Du deinen Rucksack verändern willst:
   </p>
 
   <div class="sections">
     <div v-for="section in sections" :key="section">
-      {{ section }}
+      <router-link :to="'/section/' + section">{{ section }}</router-link>
     </div>
   </div>
 
@@ -35,8 +43,8 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-a {
-  color: #42b983;
+p {
+  text-align: center;
 }
 
 .sections {
@@ -58,10 +66,4 @@ a {
   }
 }
 
-.copyright {
-  position: fixed;
-  right: 2px;
-  bottom: 2px;
-  font-size: 0.7rem;
-}
 </style>
