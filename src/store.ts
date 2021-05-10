@@ -1,8 +1,16 @@
-import { ActionContext, createStore, storeKey } from "vuex"
+import { ActionContext, createStore } from "vuex"
+
+const version = 1
 
 type UserProfile = {
   foodCategory?: string
 }
+
+const appInfo = localStorage.getItem("app")
+if (!appInfo) {
+  localStorage.removeItem("userProfile")
+}
+localStorage.setItem("app", JSON.stringify({ version }))
 
 const userProfile = localStorage.getItem("userProfile")
 const emptyUserProfile = {
