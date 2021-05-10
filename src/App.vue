@@ -25,16 +25,12 @@ export default defineComponent({
   </div>
 
   <template v-else>
-    <header :class="{ hero: maxMainImg }">
-      <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/backpack.png" />
+    <header class="container" :class="{ hero: maxMainImg }">
+      <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/splash-screen.png" />
       <h1>Der Grüne Rucksack</h1>
     </header>
 
     <router-view />
-
-    <div class="copyright">
-      Bild von http://pngimg.com/image/6353 unter CC-BY 4.0
-    </div>
   </template>
 </template>
 
@@ -53,6 +49,15 @@ a {
   color: #1f8959;
 }
 
+@media (max-width: 800px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,16 +71,25 @@ a {
 
     img {
       width: 100%;
+      padding: 3rem;
     }
   }
 
   header {
     display: flex;
+    align-items: center;
+    margin: .5rem 0 1rem;
+    overflow: hidden;
 
     img {
       transition: all .5s;
-      margin: 1em 0 0;
+      margin-right: .5rem;
       max-height: 3rem;
+    }
+
+    h1 {
+      white-space: nowrap;
+      margin: 0;
     }
 
     &.hero {
@@ -84,24 +98,10 @@ a {
 
       img {
         display: inline-block;
-        margin: 5em auto 0;
-        max-height: 12rem;
-      }
-    }
-
-    @media (max-width: 800px) {
-      h1 {
-        font-size: 28px;
-        margin-top: 1.4rem;
+        margin: 3rem auto 1rem;
+        max-height: 10rem;
       }
     }
   }
-}
-
-.copyright {
-  position: fixed;
-  right: 2px;
-  bottom: 2px;
-  font-size: 0.7rem;
 }
 </style>

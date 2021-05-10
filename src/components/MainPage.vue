@@ -35,11 +35,6 @@ export default component
       <router-link :to="'/section/' + section">{{ section }}</router-link>
     </div>
   </div>
-
-  <div class="copyright">
-    Bild von http://pngimg.com/image/6353 unter CC-BY 4.0
-  </div>
-
 </template>
 
 <style lang="scss" scoped>
@@ -65,5 +60,4 @@ p {
     }
   }
 }
-
 </style>

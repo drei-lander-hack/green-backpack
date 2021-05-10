@@ -35,6 +35,10 @@ const component = defineComponent({
 
     isChecked(id: string): boolean {
       return id === this.store.state.userProfile.foodCategory
+    },
+
+    challenges(): void {
+      this.$router.push("/section/Mittagessen/challenges")
     }
   }
 })
@@ -43,23 +47,28 @@ export default component
 </script>
 
 <template>
-  <h2>Mittagessen</h2>
+  <div class="container">
+    <h2>Mittagessen</h2>
 
-  <p>
-    Wie ordnest du dein Verhalten aktuell ein?
-  </p>
+    <p>
+      Wie ordnest du dein Verhalten aktuell ein?
+    </p>
 
-  <div v-for="category in foodCategories" :key="category.title">
-    <RadioButton :id="category.title" name="foodCategory" :title="category.title"
-      @select="selected"
-      :checked="isChecked(category.title)"
-    />
+    <div v-for="category in foodCategories" :key="category.title">
+      <RadioButton :id="category.title" name="foodCategory" :title="category.title"
+        @select="selected"
+        :checked="isChecked(category.title)"
+      />
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary" @click="challenges">Zu den Challenges</button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-ul {
-  text-align: left;
-
-}
+  .btn-group {
+    margin-top: 1rem;
+  }
 </style>
