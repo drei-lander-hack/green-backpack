@@ -30,8 +30,8 @@ const mutations = {
     state.maxMainImg = true
   },
 
-  setUserProfile(state: State, newProfile: UserProfile) {
-    state.userProfile = newProfile
+  setUserProfile(state: State, payload: { profile: UserProfile }) {
+    state.userProfile = payload.profile
   }
 }
 
@@ -44,8 +44,8 @@ export const mutationTypes = {
     return { type: "maximizeMainImage" }
   },
 
-  setUserProfile(newProfile: UserProfile) {
-    return { type: "setUserProfile", newProfile }
+  setUserProfile(profile: UserProfile) {
+    return { type: "setUserProfile", profile }
   }
 }
 
