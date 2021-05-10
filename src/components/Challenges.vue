@@ -33,7 +33,7 @@ export default component
           <div class="card-body">
             <h5 class="card-title">{{ suggestion.title }}</h5>
             <p class="card-text">{{ suggestion.description }}</p>
-            <details>
+            <details v-if="suggestion.moreInfo">
               <summary>ⓘ</summary>
               <p>{{ suggestion.moreInfo }}</p>
             </details>
@@ -58,6 +58,7 @@ export default component
     .btn-container {
       flex-grow: 1;
       align-items: end;
+      padding-top: 1rem;
     }
   }
 }

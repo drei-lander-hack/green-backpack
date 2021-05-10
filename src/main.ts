@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import { createStore } from "vuex"
 import App from './App.vue'
 import { createRouter, createWebHashHistory } from "vue-router"
 import MainPage from "./components/MainPage.vue"
