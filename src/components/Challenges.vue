@@ -27,11 +27,51 @@ export default component
       Diese Vorschläge haben wir für dich:
     </p>
 
-    <div v-for="suggestion in suggestions" :key="suggestion.title">
-      {{ suggestion.title }}
+    <div class="row">
+      <div v-for="suggestion in suggestions" :key="suggestion.title" class="col-md-4 col-sm-1">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ suggestion.title }}</h5>
+            <p class="card-text">{{ suggestion.description }}</p>
+            <details>
+              <summary>ⓘ</summary>
+              <p>{{ suggestion.moreInfo }}</p>
+            </details>
+            <div class="btn-container">
+              <a href="#" class="btn btn-primary">Annehmen</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.card {
+  height: 100%;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+
+    .btn-container {
+      flex-grow: 1;
+      align-items: end;
+    }
+  }
+}
+
+details {
+  font-size: 80%;
+}
+
+summary {
+  list-style: none;
+  font-size: 100%;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
 </style>

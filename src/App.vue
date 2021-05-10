@@ -46,7 +46,12 @@ body {
 
 a {
   text-decoration: none;
-  color: #1f8959;
+  color: #348a13;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus {
+  background-color: #348a13;
+  border-color: #348a13;
 }
 
 @media (max-width: 800px) {
