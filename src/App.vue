@@ -3,6 +3,16 @@ import { defineComponent } from 'vue'
 import { mapState } from 'vuex'
 
 export default defineComponent({
+  data() {
+    return {
+      splash: true
+    }
+  },
+
+  mounted() {
+    setTimeout(() => this.splash = false, 2000)
+  },
+
   computed: {
     ...mapState(["maxMainImg"])
   }
@@ -10,16 +20,22 @@ export default defineComponent({
 </script>
 
 <template>
-  <header :class="{ hero: maxMainImg }">
-    <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/backpack.png" />
-    <h1>Der Grüne Rucksack</h1>
-  </header>
-
-  <router-view />
-
-  <div class="copyright">
-    Bild von http://pngimg.com/image/6353 unter CC-BY 4.0
+  <div v-if="splash" class="splash">
+    <img src="./assets/splash-screen.png" />
   </div>
+
+  <template v-else>
+    <header :class="{ hero: maxMainImg }">
+      <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/backpack.png" />
+      <h1>Der Grüne Rucksack</h1>
+    </header>
+
+    <router-view />
+
+    <div class="copyright">
+      Bild von http://pngimg.com/image/6353 unter CC-BY 4.0
+    </div>
+  </template>
 </template>
 
 <style lang="scss">
@@ -42,6 +58,16 @@ a {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 10px;
+
+  .splash {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
 
   header {
     display: flex;
