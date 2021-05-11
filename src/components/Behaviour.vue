@@ -24,7 +24,11 @@ const component = defineComponent({
       return this.suggestions.filter(suggestion => {
         return suggestion.who.includes(this.store.state.userProfile.foodCategory)
       })
-    }
+    },
+
+    accept(suggestion: { title: string }): void {
+      this.store.commit(mutationTypes.setPlan(suggestion.title))
+    },
   },
 
   beforeRouteEnter(to, from, next) {
@@ -54,7 +58,7 @@ export default component
           <p>{{ suggestion.moreInfo }}</p>
         </details>
         <div class="btn-list">
-          <a href="#/section/Mittagessen/current" class="btn btn-primary">Annehmen</a>
+          <a href="#/section/Mittagessen/current" class="btn btn-primary" @click="accept(suggestion)">Annehmen</a>
         </div>
       </Card>
     </div>
