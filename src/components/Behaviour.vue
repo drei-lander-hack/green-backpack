@@ -2,8 +2,12 @@
 import { defineComponent } from 'vue'
 import suggestions from "../data/suggestions"
 import { useStore } from 'vuex'
+import Card from "./Card.vue"
+import { mutationTypes } from '../store'
 
 const component = defineComponent({
+  components: { Card },
+
   setup() {
     const store = useStore()
     return { store }
@@ -21,7 +25,14 @@ const component = defineComponent({
         return suggestion.who.includes(this.store.state.userProfile.foodCategory)
       })
     }
-  }
+  },
+
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      const c = (vm as unknown as typeof component)
+      c.$store.commit(mutationTypes.minimizeMainImage())
+    })
+  },
 })
 
 export default component
@@ -36,18 +47,13 @@ export default component
     </p>
 
     <div class="row">
-      <div v-for="suggestion in mySuggestions()" :key="suggestion.title" class="col-md-4 col-sm-1">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{ suggestion.title }}</h5>
-            <p class="card-text">{{ suggestion.description }}</p>
-            <details v-if="suggestion.moreInfo">
-              <summary>ⓘ</summary>
-              <p>{{ suggestion.moreInfo }}</p>
-            </details>
-          </div>
-        </div>
-      </div>
+      <Card v-for="suggestion in mySuggestions()" :key="suggestion.title" :title="suggestion.title">
+        <p class="card-text">{{ suggestion.description }}</p>
+        <details v-if="suggestion.moreInfo">
+          <summary>ⓘ</summary>
+          <p>{{ suggestion.moreInfo }}</p>
+        </details>
+      </Card>
     </div>
   </div>
 </template>

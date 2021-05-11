@@ -1,8 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import VueApexCharts from "vue3-apexcharts"
+import { mutationTypes } from '../store'
 
-export default defineComponent({
+const component = defineComponent({
   components: {
     VueApexCharts,
   },
@@ -38,8 +39,17 @@ export default defineComponent({
         data: [this.value, this.reference] as number[]
       }]
     }
-  }
+  },
+
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      const c = (vm as unknown as typeof component)
+      c.$store.commit(mutationTypes.minimizeMainImage())
+    })
+  },
 })
+
+export default component
 </script>
 
 <template>

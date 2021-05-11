@@ -17,7 +17,7 @@ const component = defineComponent({
     })
   },
 
-computed: {
+  computed: {
     ...mapState(["sections"])
   }
 })
