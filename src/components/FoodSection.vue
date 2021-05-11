@@ -81,7 +81,7 @@ export default component
     <Comparison v-if="co2value" :value="co2value" :reference="referenceValues.foodAverage" />
 
     <div class="btn-list">
-      <button type="button" class="btn btn-primary" @click="behaviour">Dein Rucksack</button>
+      <button type="button" class="btn btn-primary" @click="behaviour">Mein Rucksack</button>
       <button type="button" class="btn btn-primary" @click="challenges">Challenges</button>
     </div>
   </div>
