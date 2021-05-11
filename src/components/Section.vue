@@ -1,11 +1,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { mutationTypes } from "../store"
+import baustelle from "../assets/baustelle.jpg"
 
 const component = defineComponent({
   data() {
     return {
       section: "",
+      baustelle,
     }
   },
 
@@ -28,24 +30,19 @@ export default component
 <template>
   <h2>{{ section }}</h2>
 
-  <h3>Dein Status</h3>
+  <img :src="baustelle" />
+  <h3>Dieser Bereich ist noch nicht ganz fertig.</h3>
 
-  <ul>
-    <li>...</li>
-    <li>...</li>
-  </ul>
-
-  <h3>Vorschläge</h3>
-
-  <ul>
-    <li>...</li>
-    <li>...</li>
-  </ul>
+  <p>Komm' doch einfach später noch mal wieder!</p>
 </template>
 
 <style scoped>
-ul {
-  text-align: left;
+h3 {
+  font-size: 110%;
+}
 
+img {
+  width: 100%;
+  padding: 20%;
 }
 </style>
