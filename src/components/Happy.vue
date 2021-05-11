@@ -1,12 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { mutationTypes } from "../store"
-import baustelle from "../assets/baustelle.jpg"
+import happy from "../assets/happy.png"
 
 const component = defineComponent({
   data() {
     return {
-      baustelle,
+      happy,
     }
   },
 
@@ -23,12 +23,12 @@ export default component
 
 <template>
   <div class="container">
-    <h2>Baustelle</h2>
+    <h2>Super!</h2>
 
-    <img :src="baustelle" />
-    <h3>Dieser Bereich ist noch nicht ganz fertig.</h3>
+    <img :src="happy" />
+    <h3>Du hast die Challenge angenommen.</h3>
 
-    <p>Komm' doch einfach später noch mal wieder!</p>
+    <p>Komm' doch einfach später wieder und trage ein, wie du dich !</p>
   </div>
 </template>
 
