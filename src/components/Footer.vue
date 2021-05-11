@@ -22,7 +22,7 @@ export default defineComponent({
 
   methods: {
     behaviour(): void {
-      this.$router.push("/section/Mittagessen/behaviour")
+      this.$router.push("/section/Mittagessen")
     },
 
     challenges(): void {

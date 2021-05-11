@@ -74,6 +74,13 @@ a {
   border-color: #348a13;
 }
 
+.btn-list {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 24px;

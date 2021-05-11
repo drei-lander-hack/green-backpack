@@ -53,6 +53,9 @@ export default component
           <summary>ⓘ</summary>
           <p>{{ suggestion.moreInfo }}</p>
         </details>
+        <div class="btn-list">
+          <a href="#/section/Mittagessen/current" class="btn btn-primary">Annehmen</a>
+        </div>
       </Card>
     </div>
   </div>
@@ -70,5 +73,9 @@ summary {
 
 details > summary::-webkit-details-marker {
   display: none;
+}
+
+.btn-list {
+  margin-top: .5rem;
 }
 </style>
