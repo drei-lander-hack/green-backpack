@@ -5,6 +5,7 @@ import graph from "../assets/graph.png"
 import company from "../assets/company.png"
 import gruppe from "../assets/gruppe.png"
 import rucksack from "../assets/rucksack.png"
+import solo from "../assets/solo.png"
 import Button from "../Button.vue"
 
 export default defineComponent({
@@ -17,6 +18,7 @@ export default defineComponent({
       company,
       gruppe,
       rucksack,
+      solo,
     }
   },
 
@@ -39,13 +41,13 @@ export default defineComponent({
 <template>
   <footer>
     <div class="btn-group" role="group" aria-label="Footer buttons">
-      <Button @click="behaviour">
-        <img :src="rucksack" />
+      <Button @click="buildingsite">
+        <img :src="solo" />
       </Button>
       <Button @click="challenges">
         <img :src="challenge" />
       </Button>
-      <Button @click="buildingsite">
+      <Button @click="behaviour">
         <img :src="graph" />
       </Button>
       <Button @click="buildingsite">
@@ -75,6 +77,7 @@ export default defineComponent({
 
     button {
       border: none;
+      padding: .4rem;
 
       img {
         max-width: 2em;

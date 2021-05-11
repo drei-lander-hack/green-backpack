@@ -24,7 +24,8 @@ const state = {
     "Mittagessen",
   ],
   maxMainImg: true,
-  userProfile: userProfile ? JSON.parse(userProfile) as UserProfile : emptyUserProfile
+  userProfile: userProfile ? JSON.parse(userProfile) as UserProfile : emptyUserProfile,
+  plan: "",
 }
 
 type State = typeof state
@@ -40,6 +41,10 @@ const mutations = {
 
   setUserProfile(state: State, payload: { profile: UserProfile }) {
     state.userProfile = payload.profile
+  },
+
+  setPlan(state: State, payload: { plan: string }) {
+    state.plan = payload.plan
   }
 }
 
@@ -54,6 +59,10 @@ export const mutationTypes = {
 
   setUserProfile(profile: UserProfile) {
     return { type: "setUserProfile", profile }
+  },
+
+  setPlan(plan: string) {
+    return { type: "setPlan", plan }
   }
 }
 
