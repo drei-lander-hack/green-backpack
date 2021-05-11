@@ -92,5 +92,6 @@ export default component
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
+    max-width: 500px;
   }
 </style>
