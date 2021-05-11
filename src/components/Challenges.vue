@@ -25,6 +25,12 @@ const component = defineComponent({
       c.$store.commit(mutationTypes.minimizeMainImage())
     })
   },
+
+  methods: {
+    accept() {
+      this.$router.push("/happy")
+    }
+  }
 })
 
 export default component
@@ -42,7 +48,7 @@ export default component
       <Card v-for="(challenge, index) in challenges" :key="index" :title="challenge.title">
         <p class="card-text">{{ challenge.description }}</p>
         <div class="btn-container">
-          <a href="#" class="btn btn-primary">Annehmen</a>
+          <a href="#" class="btn btn-primary" @click.prevent="accept">Annehmen</a>
         </div>
       </Card>
     </div>
