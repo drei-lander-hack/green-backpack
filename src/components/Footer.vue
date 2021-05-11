@@ -66,6 +66,7 @@ export default defineComponent({
     text-align: center;
     background: white;
     margin-left: -10px;
+    padding-top: 10px;
 
     > div {
       display: inline;

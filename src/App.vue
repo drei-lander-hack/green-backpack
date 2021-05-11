@@ -60,7 +60,7 @@ body {
   overflow: auto;
 
   main {
-    padding-bottom: 3em;
+    padding-bottom: 4em;
   }
 }
 
