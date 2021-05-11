@@ -76,7 +76,7 @@ export default defineComponent({
       border: none;
 
       img {
-        max-width: 28px;
+        max-width: 2em;
       }
     }
   }

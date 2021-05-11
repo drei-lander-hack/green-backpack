@@ -100,11 +100,15 @@ a {
     }
   }
 
+  .container, .container-md {
+    max-width: 540px;
+  }
+
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: .5rem 0 1rem;
+    margin: .5rem auto 1rem;
     overflow: hidden;
     cursor: pointer;
 
