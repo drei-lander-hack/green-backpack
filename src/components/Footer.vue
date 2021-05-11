@@ -2,6 +2,10 @@
 import { defineComponent } from 'vue'
 import challenge from "../assets/challenge.png"
 import graph from "../assets/graph.png"
+import company from "../assets/company.png"
+import gruppe from "../assets/gruppe.png"
+import rucksack from "../assets/rucksack.png"
+import solo from "../assets/solo.png"
 import Button from "../Button.vue"
 
 export default defineComponent({
@@ -11,6 +15,10 @@ export default defineComponent({
     return {
       challenge,
       graph,
+      company,
+      gruppe,
+      rucksack,
+      solo,
     }
   },
 
@@ -34,7 +42,7 @@ export default defineComponent({
   <footer>
     <div class="btn-group" role="group" aria-label="Footer buttons">
       <Button @click="behaviour">
-        <img :src="challenge" />
+        <img :src="rucksack" />
       </Button>
       <Button @click="challenges">
         <img :src="challenge" />
@@ -43,10 +51,10 @@ export default defineComponent({
         <img :src="graph" />
       </Button>
       <Button @click="buildingsite">
-        <img :src="challenge" />
+        <img :src="company" />
       </Button>
       <Button @click="buildingsite">
-        <img :src="challenge" />
+        <img :src="gruppe" />
       </Button>
     </div>
   </footer>
