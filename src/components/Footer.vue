@@ -5,7 +5,6 @@ import graph from "../assets/graph.png"
 import company from "../assets/company.png"
 import gruppe from "../assets/gruppe.png"
 import rucksack from "../assets/rucksack.png"
-import solo from "../assets/solo.png"
 import Button from "../Button.vue"
 
 export default defineComponent({
@@ -18,7 +17,6 @@ export default defineComponent({
       company,
       gruppe,
       rucksack,
-      solo,
     }
   },
 

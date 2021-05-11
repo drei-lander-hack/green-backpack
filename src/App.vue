@@ -37,6 +37,9 @@ export default defineComponent({
     <header class="container" :class="{ hero: maxMainImg }" @click="home">
       <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/splash-screen.png" />
       <h1>Der Grüne Rucksack</h1>
+      <a href="#/buildingsite" id="profile-link">
+        <img class="profile" alt="Benutzerprofil" src="./assets/solo.png">
+      </a>
     </header>
 
     <main>
@@ -73,7 +76,7 @@ a {
 
 @media (max-width: 800px) {
   h1 {
-    font-size: 28px;
+    font-size: 24px;
   }
   h2 {
     font-size: 24px;
@@ -100,14 +103,14 @@ a {
   header {
     display: flex;
     align-items: center;
-    margin: .5rem auto 1rem;
+    justify-content: space-between;
+    margin: .5rem 0 1rem;
     overflow: hidden;
     cursor: pointer;
 
     img {
       transition: all .5s;
-      margin-right: .5rem;
-      max-height: 3rem;
+      max-height: 2rem;
     }
 
     h1 {
@@ -123,6 +126,10 @@ a {
         display: inline-block;
         margin: 3rem auto 1rem;
         max-height: 10rem;
+      }
+
+      #profile-link {
+        display: none;
       }
     }
   }
