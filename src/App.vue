@@ -100,10 +100,6 @@ a {
     }
   }
 
-  .container, .container-md {
-    max-width: 540px;
-  }
-
   header {
     display: flex;
     align-items: center;
