@@ -50,9 +50,13 @@ const component = defineComponent({
       return id === this.store.state.userProfile.foodCategory
     },
 
+    behaviour(): void {
+      this.$router.push("/section/Mittagessen/behaviour")
+    },
+
     challenges(): void {
       this.$router.push("/section/Mittagessen/challenges")
-    }
+    },
   }
 })
 
@@ -64,7 +68,7 @@ export default component
     <h2>Mittagessen</h2>
 
     <p>
-      Wie ordnest du dein Verhalten aktuell ein?
+      Was isst du bisher an Arbeitstagen?
     </p>
 
     <div v-for="(category, id) in foodCategories" :key="id">
@@ -76,14 +80,17 @@ export default component
 
     <Comparison v-if="co2value" :value="co2value" :reference="referenceValues.foodAverage" />
 
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" @click="challenges">Zu den Challenges</button>
+    <div class="btn-list">
+      <button type="button" class="btn btn-primary" @click="behaviour">Dein Rucksack</button>
+      <button type="button" class="btn btn-primary" @click="challenges">Challenges</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-  .btn-group {
+  .btn-list {
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
   }
 </style>
