@@ -19,7 +19,12 @@ export default defineComponent({
           id: "vuechart",
         },
         xaxis: {
-          categories: ["Dein CO2-Ausstoß pro Jahr", "Durchschnitt pro Jahr"],
+          categories: ["Du", "Durchschnitt"],
+        },
+        yaxis: {
+          title: {
+            text: "CO2 Äquivalente in kg pro Jahr"
+          }
         },
         colors: ["#348a13"]
       },
