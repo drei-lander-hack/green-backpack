@@ -18,3 +18,20 @@ export default defineComponent({
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.card {
+  height: 100%;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+
+    .btn-container {
+      flex-grow: 1;
+      align-items: end;
+      padding-top: 1rem;
+    }
+  }
+}
+</style>
