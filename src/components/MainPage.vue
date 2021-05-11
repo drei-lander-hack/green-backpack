@@ -31,9 +31,7 @@ export default component
   </p>
 
   <div class="sections">
-    <div v-for="section in sections" :key="section">
-      <router-link :to="'/section/' + section">{{ section }}</router-link>
-    </div>
+    <router-link :to="'/section/' + section" class="btn btn-primary" v-for="section in sections" :key="section">{{ section }}</router-link>
   </div>
 </template>
 
@@ -49,15 +47,8 @@ p {
   max-width: 1024px;
   margin: 0 auto;
 
-  div {
-    border: 1px solid #aaaaaa;
-    padding: .5em 1em;
-    margin: .5em;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #eeeeee;
-    }
+  .btn {
+    margin: .5rem;
   }
 }
 </style>
