@@ -28,7 +28,7 @@ export default component
     <img :src="happy" />
     <h3>Du hast die Challenge angenommen.</h3>
 
-    <p>Komm' doch einfach später wieder und trage ein, wie du dich !</p>
+    <p>Komm' doch einfach später wieder und sag' Bescheid, wie es dir gelingt!</p>
   </div>
 </template>
 
@@ -43,6 +43,6 @@ h3 {
 
 img {
   width: 100%;
-  padding: 20%;
+  padding: 10%;
 }
 </style>
