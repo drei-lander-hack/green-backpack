@@ -6,6 +6,7 @@ import Section from "./components/Section.vue"
 import FoodSection from "./components/FoodSection.vue"
 import Behaviour from "./components/Behaviour.vue"
 import Challenges from "./components/Challenges.vue"
+import BuildingSite from "./components/BuildingSite.vue"
 import store from './store'
 
 const routes = [
@@ -14,6 +15,7 @@ const routes = [
   { path: "/section/:section/behaviour", component: Behaviour },
   { path: "/section/:section/challenges", component: Challenges },
   { path: "/section/:section", component: Section },
+  { path: "/buildingsite", component: BuildingSite },
 ]
 
 const router = createRouter({

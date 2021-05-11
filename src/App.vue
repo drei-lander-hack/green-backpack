@@ -1,8 +1,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { mapState } from 'vuex'
+import Button from "./Button.vue"
 
 export default defineComponent({
+  components: { Button },
+
   data() {
     return {
       splash: true
@@ -15,7 +18,25 @@ export default defineComponent({
 
   computed: {
     ...mapState(["maxMainImg"])
-  }
+  },
+
+  methods: {
+    home() {
+      this.$router.push("/")
+    },
+
+    behaviour(): void {
+      this.$router.push("/section/Mittagessen/behaviour")
+    },
+
+    challenges(): void {
+      this.$router.push("/section/Mittagessen/challenges")
+    },
+
+    buildingsite(): void {
+      this.$router.push("/buildingsite")
+    },
+  },
 })
 </script>
 
@@ -25,12 +46,24 @@ export default defineComponent({
   </div>
 
   <template v-else>
-    <header class="container" :class="{ hero: maxMainImg }">
+    <header class="container" :class="{ hero: maxMainImg }" @click="home">
       <img class="logo" alt="Der Grüne Rucksack Logo" src="./assets/splash-screen.png" />
       <h1>Der Grüne Rucksack</h1>
     </header>
 
-    <router-view />
+    <main>
+      <router-view />
+    </main>
+
+    <footer>
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <Button @click="behaviour">1</Button>
+        <Button @click="challenges">2</Button>
+        <Button @click="buildingsite">3</Button>
+        <Button @click="buildingsite">4</Button>
+        <Button @click="buildingsite">5</Button>
+      </div>
+    </footer>
   </template>
 </template>
 
@@ -42,6 +75,15 @@ html {
 body {
   height: 100%;
   overflow: auto;
+
+  main {
+    padding-bottom: 3em;
+  }
+
+  footer {
+    background: white;
+    margin-left: -10px;
+  }
 }
 
 a {
@@ -85,6 +127,7 @@ a {
     align-items: center;
     margin: .5rem auto 1rem;
     overflow: hidden;
+    cursor: pointer;
 
     img {
       transition: all .5s;
@@ -106,6 +149,18 @@ a {
         margin: 3rem auto 1rem;
         max-height: 10rem;
       }
+    }
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    > div {
+      display: inline;
+      margin: 0 auto;
     }
   }
 }
