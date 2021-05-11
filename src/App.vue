@@ -2,13 +2,15 @@
 import { defineComponent } from 'vue'
 import { mapState } from 'vuex'
 import Button from "./Button.vue"
+import challenge from "./assets/challenge.jpg"
 
 export default defineComponent({
   components: { Button },
 
   data() {
     return {
-      splash: true
+      splash: true,
+      challenge,
     }
   },
 
@@ -57,11 +59,21 @@ export default defineComponent({
 
     <footer>
       <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <Button @click="behaviour">1</Button>
-        <Button @click="challenges">2</Button>
-        <Button @click="buildingsite">3</Button>
-        <Button @click="buildingsite">4</Button>
-        <Button @click="buildingsite">5</Button>
+        <Button @click="behaviour">
+          <img :src="challenge" />
+        </Button>
+        <Button @click="challenges">
+          <img :src="challenge" />
+        </Button>
+        <Button @click="buildingsite">
+          <img :src="challenge" />
+        </Button>
+        <Button @click="buildingsite">
+          <img :src="challenge" />
+        </Button>
+        <Button @click="buildingsite">
+          <img :src="challenge" />
+        </Button>
       </div>
     </footer>
   </template>
@@ -83,6 +95,10 @@ body {
   footer {
     background: white;
     margin-left: -10px;
+
+    button img {
+      max-width: 28px;
+    }
   }
 }
 
