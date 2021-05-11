@@ -40,10 +40,10 @@ export default component
 
 <template>
   <div class="container">
-    <h2>Dein Verhalten optimieren</h2>
+    <h2>Mein Verhalten optimieren</h2>
 
     <p>
-      Diese Vorschläge haben wir für dich:
+      Diese Vorschläge haben wir für dich für die nächste Woche:
     </p>
 
     <div class="row">
