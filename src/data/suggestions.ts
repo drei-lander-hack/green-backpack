@@ -7,7 +7,7 @@ export default [
   },
   {
     title: "Reduziere Milchprodukte",
-    description: "Milchprodukte bedingen, dass in großer Anzahl Rinder oder Schafe gehalten werden müssen. Auch wenn diese Tiere nicht geschlachtet werden, sondern 'nur' Milch geben, entstehen große Mengen klimaschädliches Gas.",
+    description: "Milchprodukte bedingen, dass in großer Anzahl Rinder oder Schafe gehalten werden müssen. In der Summe entstehen große Mengen klimaschädlicher Gase.",
     moreInfo: "Einen guten Überblick über den Ausstoß klimaschädlicher Gase bei der Tierhaltung kann man bei Our World In Data https://ourworldindata.org/environmental-impacts-of-food#where-do-the-emissions-from-our-food-come-from nachlesen.",
     who: ["meat", "halfmeat", "vegetarian"],
   },
