@@ -65,6 +65,7 @@ export default defineComponent({
     position: fixed;
     bottom: 0;
     width: 100%;
+    max-width: 1000px;
     text-align: center;
     background: white;
     margin-left: -10px;

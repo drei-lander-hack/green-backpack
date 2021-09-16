@@ -92,9 +92,11 @@ a {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
 
   .splash {
-    width: 800px;
+    width: 1000px;
     max-width: 100%;
     margin: 0 auto;
 
@@ -108,7 +110,6 @@ a {
     display: flex;
     align-items: center;
     margin: .5rem auto 1rem;
-    overflow: hidden;
     cursor: pointer;
 
     img {

@@ -25,7 +25,7 @@ export default component
   <div class="container">
     <h2>Baustelle</h2>
 
-    <img :src="baustelle" />
+    <div class="img-container"><img :src="baustelle" alt="Baustelle"/></div>
     <h3>Dieser Bereich ist noch nicht ganz fertig.</h3>
 
     <p>Komm' doch einfach später noch mal wieder!</p>
@@ -34,11 +34,16 @@ export default component
 
 <style scoped>
 .container {
-  max-width: 480px;
+  max-width: 1000px;
 }
 
 h3 {
   font-size: 110%;
+}
+
+.img-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 img {

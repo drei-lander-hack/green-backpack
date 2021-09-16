@@ -30,19 +30,31 @@ export default component
 <template>
   <h2>{{ section }}</h2>
 
-  <img :src="baustelle" />
+  <div class="img-container"><img :src="baustelle" /></div>
   <h3>Dieser Bereich ist noch nicht ganz fertig.</h3>
 
   <p>Komm' doch einfach später noch mal wieder!</p>
 </template>
 
 <style scoped>
+h2 {
+  margin-left: .7rem;
+}
+
 h3 {
-  font-size: 110%;
+  font-size: 120%;
+}
+
+h3, p {
+  text-align: center;
+}
+
+.img-container {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 img {
   width: 100%;
-  padding: 20%;
 }
 </style>
